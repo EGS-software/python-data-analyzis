@@ -3,11 +3,11 @@ name: generic build
 on:
   push:
     branches:
-      - **
+      - "**""
 
   pull_request:
     branches:
-      - main  
+      - "**""
 
 jobs:
   build: ''
