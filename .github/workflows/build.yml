@@ -26,7 +26,7 @@ jobs:
 
       - name: Run main.py in any aula folder
         run: |
-          FILE=$(find . -type f -path "./aula*/main.py" | head -n 1)
+          FILE=$(find . -type f -path "./Aula*/main.py" | head -n 1)
           if [ -z "$FILE" ]; then
             echo "❌ Nenhum main.py encontrado nas pastas aula*"
             exit 1
