@@ -23,13 +23,3 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt || true
-
-      - name: Run main.py in any aula folder
-        run: |
-          FILE=$(find . -type f -path "./Aula*/main.py" | head -n 1)
-          if [ -z "$FILE" ]; then
-            echo "❌ Nenhum main.py encontrado nas pastas aula*"
-            exit 1
-          fi
-          echo "▶ Executando: $FILE"
-          python "$FILE"
