@@ -69,5 +69,5 @@ def main():
     exibir_resultados(recinto, janela, porta, pessoas, aparelhos, cargaTermica, cargaBTU)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # Entry point for the script
     main()
