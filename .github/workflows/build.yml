@@ -1,0 +1,40 @@
+name: generic build
+
+on:
+  push:
+    branches:
+      - '**'  # qualquer branch
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || true
+
+
+#      # Código cortado devido complexidade e possíveis erros em paths variádas devido a inputs.
+#                
+#
+#      - name: Run main.py in any aula folder
+#        run: |
+#          FILE=$(find . -type f -path "./Aula*/main.py" | head -n 1)  # Procura o primeiro main.py em qualquer pasta que comece com "Aula" 
+#          if [ -z "$FILE" ]; then
+#            echo "❌ Nenhum main.py encontrado nas pastas aula*"
+#            exit 1
+#          fi
+#          echo "▶ Executando: $FILE"
+#          python "$FILE"
+#
