@@ -91,9 +91,9 @@ def recomendacaoAr(cargaBTU):
     print("\n---RECOMENDAÇÃO DE APARELHO---")
     if cargaBTU <= 9000:
         print("Modelo sugerido (9.000 BTUs): https://www.mercadolivre.com.br/ar-condicionado-split-hi-wall-tcl-9000-btuh-frio-monofasico-220-volts/p/MLB23378747")
-    elif cargaBTU <= 12000:
+    elif cargaBTU>9000 and cargaBTU<= 12000:
         print("Modelo sugerido (12.000 BTUs): https://www.magazineluiza.com.br/ar-condicionado-split-hi-wall-hitachi-air-home-600-inverter-12000-btus-quente-e-frio-r32-220v/p/eej8j6e449")
-    elif cargaBTU <= 18000:
+    elif cargaBTU>12000 and cargaBTU<= 18000:
         print("Modelo sugerido (18.000 BTUs): https://www.magazineluiza.com.br/ar-condicionado-split-hi-wall-inverter-lg-dual-voice-ai-18-000-btus-frio-220v-r-32/p/fe2e42gh0d")
     else:
         print("Modelo sugerido (36.000 BTUs): https://www.magazineluiza.com.br/ar-condicionado-split-pisoteto-midea-inverter-36000-btus-frio-r32-220v-midea-carrier/p/jb3k92a954")
