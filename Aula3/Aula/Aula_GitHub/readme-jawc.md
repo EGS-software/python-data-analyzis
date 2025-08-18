@@ -1,0 +1,1 @@
+Olá Meu nome é João Alfredo Williges Cunha, e curto backend JAVA, e front com scss.
