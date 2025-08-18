@@ -1,0 +1,1 @@
+Olá eu me chamo Mauro Roncata, atualmente focando meus estudos em C#, tenho 21 anos atualmente cursando o 4° semestre em Engenharia de Software.
