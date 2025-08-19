@@ -19,9 +19,9 @@ Este repositório faz parte de uma iniciativa educacional dedicada ao estudo e p
 A organização das branches segue o formato baseado em aulas:
 
 ```bash
-aula1
-aula2
-aula3
+aula-1
+aula-2
+aula-3
 ...
 ```
 ## 🧰 Tecnologias e Bibliotecas Utilizadas
