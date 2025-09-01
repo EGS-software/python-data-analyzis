@@ -10,7 +10,7 @@ with open('exemplo.txt', 'r') as arquivo:
   print(conteudo);
 
 # Escrever arquivo:
-with open(dados.txt, 'w') as dados:
+with open('dados.txt', 'w') as dados:
   arquivo.write("Olá garotos");
   arquivo.write("Sou um garotão de software");
 
@@ -27,6 +27,9 @@ with open('dados-csv.csv', 'r', 'utf-8') as entrada:
     for linha in leitor_csv:
       print(linha)
       escritor_csv.writerow(linha)
+
+#Manipulação JSON
+
 
 
 
