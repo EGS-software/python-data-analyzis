@@ -59,9 +59,16 @@ db.append(["3", "Produto C", "20.0"])
 #R - Read
 print(db)
 
+#U - Update(alterar onde id ==1)
+for linha in db:
+  if linha[0] == "1": #coluna 0=id
+      linha[2] == "30.0" #coluna 2=preco
+save(db)
+
 
   
   
+
 
 
 
