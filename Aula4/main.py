@@ -47,8 +47,19 @@ ARQ = 'produtos.csv'
 def load():
   with open(ARQ, mode='r', encoding="utf-8") as f:
             return list(csv.reader(f))
+def save(db):
+  with open(ARQ,  mode='w', encoding="utf-8") as f:
+    csv.writer(f).writerows(db)
+
+db = load()
+
+#C - CREATE
+db.append(["3", "Produto C", "20.0"])
+
+
   
   
+
 
 
 
