@@ -1,0 +1,12 @@
+{ 
+    "Produto": "Notebook",
+    "Marca": "Dell",
+    "Preço": 3500.00,
+    "Estoque": 15,
+    "Características": {
+        "Processador": "Intel Core i7",
+        "Memória RAM": "16GB",
+        "Armazenamento": "512GB SSD",
+        "Tela": "15.6 polegadas"
+    }
+}
