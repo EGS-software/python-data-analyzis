@@ -22,7 +22,7 @@ import csv
 with open('dados-csv.csv', 'r', encoding='utf-8') as entrada:
   leitor_csv = csv.reader(entrada)
   #Abrir novo arquivo para escrita
-  with open('novo_dados-csv.csv', 'w', encoding='utf-8') as saida:
+  with open('novo_dados-csv.csv', 'w', encoding='utf-8', newline='') as saida:
     escritor_csv = csv.writer(saida)
     for linha in leitor_csv:
       print(linha)
@@ -40,6 +40,7 @@ with open('novo_dados-json.json', mode='w', encoding="utf-8") as json
   json.dump(dados, saida, indent=4)
   
   
+
 
 
 
