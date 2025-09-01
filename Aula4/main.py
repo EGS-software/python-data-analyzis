@@ -36,10 +36,11 @@ with open('dados-json.json', 'r', encoding="utf-8") as entrada:
   dados = json.load(entrada)
   print(dados)
   #Abrir novo arquivo
-with open('novo_dados-json.json', mode='w', encoding="utf-8") as json
+with open('novo_dados-json.json', mode='w', encoding="utf-8") as saida
   json.dump(dados, saida, indent=4)
   
   
+
 
 
 
