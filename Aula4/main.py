@@ -1,3 +1,4 @@
+# Ler arquivo:
 arquivo = open("exemplo.txt", 'r')
 conteudo = arquivo.read()
 print(conteudo)
@@ -7,3 +8,4 @@ arquivo.close()
 with open('exemplo.txt', 'r') as arquivo:
   conteudo = arquivo.read()
   print(conteudo)
+
