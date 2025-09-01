@@ -56,9 +56,13 @@ db = load()
 #C - CREATE
 db.append(["3", "Produto C", "20.0"])
 
+#R - Read
+print(db)
+
 
   
   
+
 
 
 
