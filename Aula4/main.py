@@ -32,10 +32,15 @@ with open('dados-csv.csv', 'r', encoding='utf-8') as entrada:
 import json
 
 #ABrir o arquivo JSON para leitura
-with open('dados-json.json', 'r', "utf-8") as entrada:
+with open('dados-json.json', 'r', encoding="utf-8") as entrada:
   dados = json.load(entrada)
   print(dados)
+  #Abrir novo arquivo
+with open('novo_dados-json.json', mode='w', encoding="utf-8") as json
+  json.dump(dados, saida, indent=4)
   
+  
+
 
 
 
