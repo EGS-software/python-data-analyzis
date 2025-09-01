@@ -38,8 +38,18 @@ with open('dados-json.json', 'r', encoding="utf-8") as entrada:
   #Abrir novo arquivo
 with open('novo_dados-json.json', mode='w', encoding="utf-8") as saida
   json.dump(dados, saida, indent=4)
+
+#EXEMPLO CRUD COM CSV
+import csv
+
+ARQ = 'produtos.csv'
+
+def load():
+  with open(ARQ, mode='r', encoding="utf-8") as f:
+            return list(csv.reader(f))
   
   
+
 
 
 
