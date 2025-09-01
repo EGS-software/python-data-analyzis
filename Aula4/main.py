@@ -19,10 +19,10 @@ with open('dados.txt', 'w') as dados:
 import csv
 
 #Abrir o arquivo CSV para leitura
-with open('dados-csv.csv', 'r', 'utf-8') as entrada:
+with open('dados-csv.csv', 'r', encoding='utf-8') as entrada:
   leitor_csv = csv.reader(entrada)
   #Abrir novo arquivo para escrita
-  with open('novo_dados-csv.csv', 'w', 'utf-8') as saida:
+  with open('novo_dados-csv.csv', 'w', encoding='utf-8') as saida:
     escritor_csv = csv.writer(saida)
     for linha in leitor_csv:
       print(linha)
@@ -35,6 +35,8 @@ import json
 with open('dados-json.json', 'r', "utf-8") as entrada:
   dados = json.load(entrada)
   print(dados)
+  
+
 
 
 
