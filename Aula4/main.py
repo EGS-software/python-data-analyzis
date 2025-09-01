@@ -11,8 +11,8 @@ with open('exemplo.txt', 'r') as arquivo:
 
 # Escrever arquivo:
 with open('dados.txt', 'w') as dados:
-  arquivo.write("Olá garotos")
-  arquivo.write("Sou um garotão de software")
+  dados.write("Olá garotos")
+  dados.write("Sou um garotão de software")
 
 # Manipulação de arquivo CSV
 
@@ -35,6 +35,7 @@ import json
 with open('dados-json.json', 'r', "utf-8") as entrada:
   dados = json.load(entrada)
   print(dados)
+
 
 
 
