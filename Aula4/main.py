@@ -29,6 +29,13 @@ with open('dados-csv.csv', 'r', 'utf-8') as entrada:
       escritor_csv.writerow(linha)
 
 #Manipulação JSON
+import json
+
+#ABrir o arquivo JSON para leitura
+with open('dados-json.json', 'r', "utf-8") as entrada:
+  dados = json.load(entrada)
+  print(dados)
+
 
 
 
