@@ -21,6 +21,13 @@ import csv
 #Abrir o arquivo CSV para leitura
 with open('dados-csv.csv', 'r', 'utf-8') as entrada:
   leitor_csv = csv.reader(entrada);
+  #Abrir novo arquivo para escrita
+  with open('novo_dados-csv.csv', 'w', 'utf-8') as saida:
+    escritor_csv = csv.writer(saida)
+    for linha in leitor_csv:
+      print(linha)
+      escritor_csv.writerow(linha)
+
 
 
 
