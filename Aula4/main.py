@@ -63,11 +63,17 @@ print(db)
 for linha in db:
   if linha[0] == "1": #coluna 0=id
       linha[2] == "30.0" #coluna 2=preco
+
+
+#DELETE (remover todos com id==="1")
+db = [linha for linha in db if linha[0] != "1"]
+
 save(db)
 
 
   
   
+
 
 
 
