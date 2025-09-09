@@ -21,13 +21,13 @@ else:
 if bebida == "sim":
     opcoes = ["1 - Café", "2 - Chá", "3 - Chocolate" ]
     for opcao in opcoes:
-         print(opcao)
+        print(opcao)
     escolha = input ("Escolha uma bebida : ").strip()
     print (f"Bebida escolhida {opcoes[int(escolha)-1]}")
     print ("Amizade começou")
     exit()
 else: 
-     
+    
     interesse = print("Verificando interesse")
     opcoes = ["1 - Café", "2 - Chá", "3 - Chocolate" ]
     for opcao in opcoes:
