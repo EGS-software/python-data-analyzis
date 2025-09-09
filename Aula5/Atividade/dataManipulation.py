@@ -3,7 +3,8 @@ from collections import defaultdict
 from datetime import datetime
 
 
-entrada = 'sales_data.csv'
+entrada = 'Aula5/Atividade/sales_data.csv'
+
 
 dados = []
 with open (entrada, 'r', encoding='utf-8') as f:
@@ -29,7 +30,7 @@ resumo_categoria = defaultdict(float)
 for item in dados:
     resumo_categoria[item["categoria"]] += item["total"]
 
-with open('resumo_categoria.csv', 'w', newline='', encoding='utf-8') as f:
+with open('Aula5/Atividade/resumo_categoria.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(['Categoria', 'Total Vendido (R$)'])
     for categoria, total in resumo_categoria.items():
@@ -45,7 +46,7 @@ vendas_produto_cat = defaultdict(lambda: defaultdict(float))
 for item in dados:
     vendas_produto_cat[item["categoria"]][item["produto"]] += item["total"]
 
-with open('mais_vendidos.csv', 'w', newline='', encoding='utf-8') as f:
+with open('Aula5/Atividade/mais_vendidos.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(['Categoria', 'Produto', 'Total Vendido (R$)'])
     for categoria, produtos in vendas_produto_cat.items():
@@ -70,7 +71,7 @@ for item in dados:
 
 mes_campeao = max(faturamento_mensal.items(), key=lambda x: x[1])
 
-with open('mes_campeao.csv', 'w', newline='', encoding='utf-8') as f:
+with open('Aula5/Atividade/mes_campeao.csv', 'w', newline='', encoding='utf-8') as f:
     f.write(f'Mês campeão: {mes_campeao[0]} - Faturamento: R$ {mes_campeao[1]:.2f}\n')
 
 print("\nmes_campeao.txt")
