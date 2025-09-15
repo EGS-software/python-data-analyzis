@@ -14,6 +14,7 @@ class Caneta:
 try:
     c1 = Caneta("Vermelha", "WBM-7", 100, False)
     print(c1.cor, c1.modelo, c1.carga, c1.tampada)
+    c1.rabiscar()
 except Exception:
     print("Erro ao criar ou usar c1")
 
