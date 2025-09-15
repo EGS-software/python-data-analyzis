@@ -5,7 +5,7 @@ class ControleRemoto:
         self.largura = largura
         self.profundidade = profundidade
 
-controle_remoto1 = ControleRemoto()
+controle_remoto1 = ControleRemoto("branco", "8cm", "4cm", "1cm")
 print(controle_remoto1.color)
 
 
