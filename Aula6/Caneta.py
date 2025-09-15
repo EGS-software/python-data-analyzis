@@ -1,6 +1,18 @@
-class Caneta:
-    def __init__(self, color, model, carga, tampada):
-        self.color:str = color
-        self.model:str = model
-        self.carga:str = carga
-        self.tampada:bool = tampada
+class caneta:
+    def __init__(self, cor, ponta, carga, tampada):
+        self.cor = cor
+        self.ponta = ponta
+        self.carga = carga
+        self.tampada = tampada
+
+    def rabiscar(self):
+        if self.tampada:
+            print("ERRO! Nao posso rabiscar")
+        else:
+            print("Estou rabiscando")
+
+    def tampar(self):
+        self.tampada = True
+
+    def destampar(self):
+        self.tampada = False
