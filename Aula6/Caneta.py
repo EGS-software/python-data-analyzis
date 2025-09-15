@@ -6,10 +6,10 @@ class caneta:
         self.tampada = tampada
 
     def rabiscar(self):
-        if self.tampada:
-            print("ERRO! Nao posso rabiscar")
+        if self.tampada is True:
+            print("Não é possível escrever. A caneta está tampada...")
         else:
-            print("Estou rabiscando")
+            print("A caneta está escrevendo...")
 
     def tampar(self):
         self.tampada = True
