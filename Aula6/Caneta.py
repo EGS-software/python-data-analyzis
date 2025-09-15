@@ -11,6 +11,12 @@ class caneta:
         else:
             print("A caneta está escrevendo...")
 
+try:
+    c1 = Caneta("Vermelha", "WBM-7", 100, False)
+
+except Exception:
+    pass
+
     def tampar(self):
         self.tampada = True
 
