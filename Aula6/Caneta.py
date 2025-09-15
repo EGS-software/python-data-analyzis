@@ -16,7 +16,7 @@ try:
     print(c1.cor, c1.modelo, c1.carga, c1.tampada)
 
 except Exception:
-    pass
+    print("Erro ao criar ou usar c1")
 
     def tampar(self):
         self.tampada = True
