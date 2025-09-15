@@ -1,9 +1,9 @@
 class ControleRemoto:
-    def __init__(self, cor, height, largura, profundidade):
-        self.color:str = "branco"
-        self.height = "8cm"
-        self.largura = "4cm"
-        self.profundidade = "1cm"
+    def __init__(self, color, height, largura, profundidade):
+        self.color:str = color
+        self.height = height
+        self.largura = largura
+        self.profundidade = profundidade
 
 controle_remoto1 = ControleRemoto()
 print(controle_remoto1.color)
