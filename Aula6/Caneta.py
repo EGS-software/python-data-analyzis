@@ -1,7 +1,7 @@
 class caneta:
     def __init__(self, cor, ponta, carga, tampada):
         self.cor = cor
-        self.ponta = ponta
+        self.modelo = modelo
         self.carga = carga
         self.tampada = tampada
 
@@ -13,6 +13,7 @@ class caneta:
 
 try:
     c1 = Caneta("Vermelha", "WBM-7", 100, False)
+    print(c1.cor, c1.modelo, c1.carga, c1.tampada)
 
 except Exception:
     pass
