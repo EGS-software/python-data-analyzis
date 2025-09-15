@@ -8,7 +8,8 @@ class ControleRemoto:
 controle_remoto1 = ControleRemoto("branco", "8cm", "4cm", "1cm")
 print(controle_remoto1.color)
 
-
+controle_remoto2 = ControleRemoto("cinza", "10cm", "3cm", "2cm")
+print(controle_remoto1.color)
 
 # Caracteristicas
 #------
