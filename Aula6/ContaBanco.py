@@ -53,3 +53,11 @@ def taxaMensal(self, tempoContaMes):
                 self.saldo = self.saldo - 20
                 print("Mensalidade de conta poupança cobrada com sucesso")
                 
+def mostrar(self):
+    print("----------")
+    print("Conta:", self.numeroConta)
+    print("Tipo:", self.tipo)
+    print("Dono:", self.dono)
+    print("Saldo:", self.saldo)
+    print("Status:", self.status)
+    print("Tempo de conta (meses):", self.tempoContaMes)
