@@ -13,9 +13,11 @@ def abrirConta(self, tipo):
     if tipo == "CC":
        if self.saldo >= 36:
         self.saldo = self.saldo - 12 
+        print("Conta Corrente aberta com sucesso")
     elif tipo == "CP":
         if self.saldo >= 60:
-            self.saldo = self.saldo - 20 
+            self.saldo = self.saldo - 20
+        print("Conta Poupança aberta com sucesso") 
 
 def fecharConta(self):
     if self.saldo > 0:
