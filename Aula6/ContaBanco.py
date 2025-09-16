@@ -8,7 +8,7 @@ class ContaBanco:
         self.status:bool = status
         self.tempoContaMes:int = tempoContaMes
 
-def abrirConta(self, tipo):
+def abrirConta(self, tipo, saldo):
     self.tipo = tipo
     self.status = True
     if tipo == "CC":
@@ -53,7 +53,7 @@ def taxaMensal(self, tempoContaMes):
                 self.saldo = self.saldo - 20
                 print("Mensalidade de conta poupança cobrada com sucesso")
                 
-def mostrar(self):
+def mostrar(self, numeroConta, tipo, dono, saldo, status, tempoContaMes):
     print("----------")
     print("Conta:", self.numeroConta)
     print("Tipo:", self.tipo)
