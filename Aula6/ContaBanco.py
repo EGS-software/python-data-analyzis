@@ -11,9 +11,11 @@ def abrirConta(self, tipo):
     self.tipo = tipo
     self.status = True
     if tipo == "CC":
-        self.saldo = 50
+       if self.saldo >= 36:
+        self.saldo = self.saldo - 12 
     elif tipo == "CP":
-        self.saldo = 150 
+        if self.saldo >= 60:
+            self.saldo = self.saldo - 20 
 
 def fecharConta(self):
     if self.saldo > 0:
