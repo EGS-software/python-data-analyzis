@@ -7,10 +7,10 @@ class ContaBanco:
         self.saldo = saldo
         self.status = status
 
-    def abrirConta(self, tipo):
-        self.tipo = tipo
-        self.status = True
-        if tipo == "CC":
-            self.saldo = 50
-        elif tipo == "CP":
-            self.saldo = 150    
+def abrirConta(self, tipo):
+    self.tipo = tipo
+    self.status = True
+    if tipo == "CC":
+        self.saldo = 50
+    elif tipo == "CP":
+        self.saldo = 150    
