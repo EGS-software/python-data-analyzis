@@ -1,7 +1,7 @@
 class ContaBanco:
      
     def __init__ (self, numeroConta, tipo, dono, saldo, status):
-        self.numeroConta = numeroConta 
+        self.numeroConta:int = numeroConta
         self.tipo:str = tipo
         self.dono:str = dono
         self.saldo:float = saldo
