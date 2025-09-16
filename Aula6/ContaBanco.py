@@ -13,4 +13,13 @@ def abrirConta(self, tipo):
     if tipo == "CC":
         self.saldo = 50
     elif tipo == "CP":
-        self.saldo = 150    
+        self.saldo = 150 
+
+def fecharConta(self):
+    if self.saldo > 0:
+        print("Conta com dinheiro, não posso fechá-la")
+    elif self.saldo < 0:
+        print("Conta em débito, não posso fechá-la")
+    else:
+        self.status = False
+        print("Conta fechada com sucesso")
