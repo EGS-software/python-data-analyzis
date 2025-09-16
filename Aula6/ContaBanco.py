@@ -34,3 +34,11 @@ def depositar(self, valor):
         print("Depósito realizado na conta de", self.dono)
     else:
         print("Impossível depositar em uma conta inexistente")
+
+def sacar(self, valorsaque):
+    if self.status == True:
+        if self.saldo >= valorsaque:
+            self.saldo = self.saldo - valorsaque
+            print("Saque realizado na conta de", self.dono)
+        else:
+            print("Saldo insuficiente para saque")
