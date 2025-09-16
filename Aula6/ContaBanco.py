@@ -1,11 +1,12 @@
 class ContaBanco:
      
-    def __init__ (self, numeroConta, tipo, dono, saldo, status):
+    def __init__ (self, numeroConta, tipo, dono, saldo, status, tempoContaMes):
         self.numeroConta:int = numeroConta
         self.tipo:str = tipo
         self.dono:str = dono
         self.saldo:float = saldo
         self.status:bool = status
+        self.tempoContaMes:int = tempoContaMes
 
 def abrirConta(self, tipo):
     self.tipo = tipo
@@ -42,3 +43,13 @@ def sacar(self, valorsaque):
             print("Saque realizado na conta de", self.dono)
         else:
             print("Saldo insuficiente para saque")
+
+def taxaMensal(self, tempoContaMes):
+        if self.tempoContaMes >= 1:
+            if self.tipo == "CC":
+                self.saldo = self.saldo - 12
+                print("Mensalidade de conta corrente cobrada com sucesso")
+            elif self.tipo == "CP":
+                self.saldo = self.saldo - 20
+                print("Mensalidade de conta poupança cobrada com sucesso")
+                
