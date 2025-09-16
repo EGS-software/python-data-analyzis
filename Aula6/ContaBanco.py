@@ -27,3 +27,10 @@ def fecharConta(self):
     else:
         self.status = False
         print("Conta fechada com sucesso")
+
+def depositar(self, valor):
+    if self.status == True:
+        self.saldo = self.saldo + valor
+        print("Depósito realizado na conta de", self.dono)
+    else:
+        print("Impossível depositar em uma conta inexistente")
