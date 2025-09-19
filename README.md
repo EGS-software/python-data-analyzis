@@ -41,7 +41,7 @@ git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
 
 cd SEU_REPOSITORIO
 
-# IOS
+# MACOS
 python3 -m venv venv
 source venv/bin/activate
 
