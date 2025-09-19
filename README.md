@@ -45,7 +45,7 @@ cd SEU_REPOSITORIO
 python3 -m venv venv
 source venv/bin/activate
 
-# WINDONS
+# WINDOWS
 python -m venv venv
 venv\Scripts\activate
 ```
