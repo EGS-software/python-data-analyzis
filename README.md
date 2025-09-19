@@ -37,9 +37,10 @@ aula3
 Siga os passos abaixo para executar o projeto localmente em sua máquina:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone git@github.com:EGS-software/python-data-analyzis.git //VIA SSH
+git clone https://github.com/EGS-software/python-data-analyzis.git // VIA HTTPS
 
-cd SEU_REPOSITORIO
+cd python-data-analyzis
 
 # MACOS
 python3 -m venv venv
