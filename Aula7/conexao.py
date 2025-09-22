@@ -10,4 +10,4 @@ try:
         print("Conexão estabelecida!")
 
 except:
-    pass
+    print("Ocorreu um erro ao tentar se conectar ao banco de dados.")
