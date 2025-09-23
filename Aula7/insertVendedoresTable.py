@@ -4,7 +4,7 @@ def inserir_vendedores(connection):
     #Usamos 3 """ para permitir quebras de linha na query"
     insert_query = """ 
     INSERT INTO Vendedores(Nome) VALUES
-        {'João Alfredo Williges Cunha'}
+        ('João Alfredo Williges Cunha')
     """
     with connection.cursor() as cursor:
         #Aqui deve-se colocar o nome do banco correto após o USE
