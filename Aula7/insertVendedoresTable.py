@@ -7,13 +7,13 @@ def inserir_vendedores(connection):
     INSERT INTO Vendedores(Nome) VALUES (%s)
         (newVendedor)
     """
-    
+    val= (newVendedor,)
 
     with connection.cursor() as cursor:
         #Aqui deve-se colocar o nome do banco correto após o USE
         cursor.execute("USE bdSegunda")
         cursor.execute(insert_query)
         connection.commit()
-        print("Vendedor inserido com sucesso!")
+        print(f"Vendedor'{newVendedor}' inserido com sucesso!")
 
 usar_conexao(inserir_vendedores)
