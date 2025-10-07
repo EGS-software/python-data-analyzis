@@ -1,6 +1,6 @@
 # Objetivo: SELECT * FROM <tabela> LIMIT 5
 
-from connection_mongo import user_conexao_mongo
+from connection_mongo import use_connection_mongo
 
 def selectInput(db):
     colecao = db[input("Coleção: ")]
@@ -8,4 +8,4 @@ def selectInput(db):
         print(doc)
 
 
-user_conexao_mongo(selectInput)
+use_connection_mongo(selectInput)

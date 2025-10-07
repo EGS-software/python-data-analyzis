@@ -1,6 +1,6 @@
 # Objetivo: inserir um documento a coleção vendedores
 
-from connection_mongo import user_conexao_mongo
+from connection_mongo import use_connection_mongo
 
 from pymongo.errors import DuplicateKeyError
 
@@ -15,4 +15,4 @@ def insertSeller(db):
     except DuplicateKeyError as e:
         print(f"Já existe um vendedor com esse id={new_id}. Encontre outro ID", e)
 
-user_conexao_mongo(insertSeller)
+use_connection_mongo(insertSeller)

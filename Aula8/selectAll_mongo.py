@@ -1,4 +1,4 @@
-from connection_mongo import user_conexao_mongo
+from connection_mongo import use_connection_mongo
 from Aula8.consults import list
 
 def selectAll(db):
@@ -18,4 +18,4 @@ def selectAll(db):
             for d in docs:
                 print(d)
 
-user_conexao_mongo(selectAll)
+use_connection_mongo(selectAll)

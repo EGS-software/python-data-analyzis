@@ -1,5 +1,5 @@
 #ID = 5 para "GOld"
-from connection_mongo import user_conexao_mongo
+from connection_mongo import use_connection_mongo
 from pymongo.errors import PyMongoError
 
 def updateStatusCliente(db):
@@ -17,4 +17,4 @@ def updateStatusCliente(db):
     except PyMongoError as e:
         print("Erro na atualização: ", e)
 
-user_conexao_mongo(updateStatusCliente)
+use_connection_mongo(updateStatusCliente)

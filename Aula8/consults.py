@@ -1,7 +1,7 @@
 #Objetivo: Listar BDs disponiveis no servidor MongoDB
 #Dentro DBVEN listar coleções
 
-from connection_mongo import user_conexao_mongo
+from connection_mongo import use_connection_mongo
 
 def listar(db):
     # Listar todos os BDs do servidor
@@ -10,4 +10,4 @@ def listar(db):
     # Listar todas as coleções do DB
     print ("Coleções em dbven: ", db.list_collection_names())
 
-user_conexao_mongo(listar)
+use_connection_mongo(listar)
