@@ -3,7 +3,7 @@
 from connection_mongo import user_conexao_mongo
 from Aula8.consults import listar
 
-def selecionar(db):
+def selectInput(db):
     colecao = db[input("Coleção: ")]
     for doc in colecao.find().limit(5):
         print(doc)
@@ -25,5 +25,5 @@ def selectAll(db):
             for d in docs:
                 print(d)
 
-user_conexao_mongo(selecionar)
+user_conexao_mongo(selectInput)
 user_conexao_mongo(selectAll)
