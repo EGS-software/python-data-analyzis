@@ -27,3 +27,11 @@ terceira_semana = segunda_semana + ajuste_ar
 print(terceira_semana)
 
 #Agrupar as 3 semanas
+semanas = [primeira_semana + segunda_semana + terceira_semana]
+
+for i, temperatura_semana in enumerate(semanas, 1):
+    medias = temperatura_semana.mean(axis=1)
+
+    # np.argsort(medias) retorna os indices que ordenam em ordem crescente
+    # [:: -1] inverte a ordenação
+    ordem = np.argsort(medias)[:: -1]
