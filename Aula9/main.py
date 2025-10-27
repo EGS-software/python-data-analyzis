@@ -11,3 +11,6 @@ primeira_semana = np.array([
     [16,18,21,25,27,26,22],
     [17,19,22,24,26,25,21]
 ])
+
+#Ajuste pontual
+primeira_semana[2,2] = 18
