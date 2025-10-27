@@ -20,3 +20,5 @@ print(primeira_semana)
 ajuste_chuva = np.array([0,-5,-5,-5,-2,-2,-2])
 segunda_semana = primeira_semana + ajuste_chuva
 print(segunda_semana)
+
+#Construção terceira semana(massa de ar seco)
