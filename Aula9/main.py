@@ -22,3 +22,6 @@ segunda_semana = primeira_semana + ajuste_chuva
 print(segunda_semana)
 
 #Construção terceira semana(massa de ar seco)
+ajuste_ar = 10
+terceira_semana = segunda_semana + ajuste_ar
+print(terceira_semana)
