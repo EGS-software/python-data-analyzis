@@ -35,3 +35,8 @@ for i, temperatura_semana in enumerate(semanas, 1):
     # np.argsort(medias) retorna os indices que ordenam em ordem crescente
     # [:: -1] inverte a ordenação
     ordem = np.argsort(medias)[:: -1]
+
+    print(f"\nSemana {i} = Ranking de temperatura média: ")
+
+    for pos, idx in enumerate(ordem, 1):
+        print(f"\nn{pos}° {cidades[idx]} ({medias[idx]:.2f}°C)")
