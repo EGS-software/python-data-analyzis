@@ -25,3 +25,5 @@ print(segunda_semana)
 ajuste_ar = 10
 terceira_semana = segunda_semana + ajuste_ar
 print(terceira_semana)
+
+#Agrupar as 3 semanas
