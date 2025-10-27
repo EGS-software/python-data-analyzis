@@ -39,4 +39,4 @@ for i, temperatura_semana in enumerate(semanas, 1):
     print(f"\nSemana {i} = Ranking de temperatura média: ")
 
     for pos, idx in enumerate(ordem, 1):
-        print(f"\nn{pos}° {cidades[idx]} ({medias[idx]:.2f}°C)")
+        print(f"\n{pos}° {cidades[idx]} ({medias[idx]:.2f}°C)")
