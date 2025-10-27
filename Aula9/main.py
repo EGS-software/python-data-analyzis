@@ -15,3 +15,8 @@ primeira_semana = np.array([
 #Ajuste pontual
 primeira_semana[2,2] = 18
 print(primeira_semana)
+
+#Construção da 2° Semana
+ajuste_chuva = np.array([0,-5,-5,-5,-2,-2,-2])
+segunda_semana = primeira_semana + ajuste_chuva
+print(segunda_semana)
