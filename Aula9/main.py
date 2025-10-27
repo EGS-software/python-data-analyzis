@@ -27,7 +27,7 @@ terceira_semana = segunda_semana + ajuste_ar
 print(terceira_semana)
 
 #Agrupar as 3 semanas
-semanas = [primeira_semana + segunda_semana + terceira_semana]
+semanas = [primeira_semana, segunda_semana, terceira_semana]
 
 for i, temperatura_semana in enumerate(semanas, 1):
     medias = temperatura_semana.mean(axis=1)
