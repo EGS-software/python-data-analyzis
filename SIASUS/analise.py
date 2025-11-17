@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 import queries 
 
 # --- 1. CONFIGURAÇÃO DA CONEXÃO ---
-# (Faça isso apenas uma vez no topo do seu script)
+
 try:
     # Substitua 'root' e 'SEU_PASSWORD' pelo seu usuário e senha
     engine = create_engine("mysql+mysqlconnector://root:SEU_PASSWORD@localhost:3306/siasus")
@@ -98,7 +98,7 @@ print("\n--- Análise 3.4: Top 50 Regiões Dependentes por Estabelecimento ---")
 try:
     df_dependentes = pd.read_sql(queries.sql_fluxo_estab_dependentes, engine)
     print(df_dependentes)
-    # df_dependentes.to_excel("fluxo_estabelecimentos_externos.xlsx")
+    
 except Exception as e:
     print(f"Erro ao executar a consulta: {e}")
 

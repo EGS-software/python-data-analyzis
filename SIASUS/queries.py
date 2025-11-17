@@ -307,12 +307,6 @@ ORDER BY
 LIMIT 20; -- Top 20 procedimentos para pacientes com diabetes
 """
 
-
-# --- queries.py ---
-
-# (Suas queries anteriores ficam aqui em cima)
-# ...
-
 # ---
 #  Etapa 3.7: Comparações Regionais (Ijuí vs. Santa Rosa vs. Cruz Alta)
 # ---
