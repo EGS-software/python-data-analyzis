@@ -1,5 +1,5 @@
 # --- analise.py ---
-
+import matplotlib.pyplot as plt
 import pandas as pd
 from sqlalchemy import create_engine
 # Importa as variáveis do seu outro arquivo
@@ -116,5 +116,127 @@ print("\n--- Análise 3.5: Evolução do Gasto Médio por Procedimento ---")
 try:
     df_financeiro_evolucao = pd.read_sql(queries.sql_financeiro_evolucao_media, engine)
     print(df_financeiro_evolucao)
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+# --- 7. EXECUÇÃO DA ANÁLISE 3.6 ---
+
+print("\n--- Análise 3.6: Foco em Oncologia (Top 20 CIDs) ---")
+try:
+    df_oncologia = pd.read_sql(queries.sql_foco_oncologia, engine)
+    print(df_oncologia)
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+
+print("\n--- Análise 3.6: Foco em Saúde Mental (Top 20 CIDs) ---")
+try:
+    df_saude_mental = pd.read_sql(queries.sql_foco_saude_mental, engine)
+    print(df_saude_mental)
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+
+print("\n--- Análise 3.6: Foco em Atenção Básica (Top Procedimentos Diabetes) ---")
+try:
+    df_diabetes = pd.read_sql(queries.sql_foco_diabetes, engine)
+    print(df_diabetes)
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+# --- 8. EXECUÇÃO DA ANÁLISE 3.7 ---
+
+print("\n--- Análise 3.7: Comparação Regional (Ijuí, Santa Rosa, Cruz Alta) ---")
+try:
+    df_comp_regional = pd.read_sql(queries.sql_comp_regional, engine)
+    print(df_comp_regional)
+
+    print("\n--- Análise 3.7: Tendência de Demanda (Ijuí vs. Regional) ---")
+    try:
+        df_tendencia_regional = pd.read_sql(queries.sql_tendencia_demanda_regional, engine)
+        print(df_tendencia_regional)
+
+        # --- CÓDIGO DE PLOTAGEM (MATPLOTLIB) ---
+        # 1. Prepara o gráfico
+        plt.figure(figsize=(12, 7))
+        
+        # 2. Pivota o DataFrame para plotar as duas linhas (Ijuí e Outros)
+        df_pivot_regional = df_tendencia_regional.pivot(
+            index='Mes_Ano', 
+            columns='Grupo_Regional', 
+            values='Total_Procedimentos'
+        )
+        
+        # 3. Plota o gráfico de linhas
+        df_pivot_regional.plot(kind='line', marker='o', ax=plt.gca())
+        
+        # 4. Adiciona títulos e legendas
+        plt.title('Tendência de Demanda (Ijuí vs. Outros Municípios)')
+        plt.xlabel('Mês')
+        plt.ylabel('Total de Procedimentos')
+        plt.legend(title='Grupo Regional')
+        plt.grid(True)
+        plt.tight_layout() # Ajusta o layout
+        
+        # 5. Salva o gráfico como um arquivo PNG
+        plt.savefig('grafico_tendencia_regional.png')
+        plt.close() # Fecha a figura para liberar memória
+        print(">>> Gráfico 'grafico_tendencia_regional.png' salvo com sucesso.")
+        # --- FIM DA PLOTAGEM ---
+
+    except Exception as e:
+        print(f"Erro ao executar ou plotar a consulta: {e}")
+
+
+    print("\n--- Análise 3.7: Tendência de Procedimentos Críticos (Idosos 60+) ---")
+    try:
+        df_tendencia_idosos = pd.read_sql(queries.sql_tendencia_idosos_criticos, engine)
+        print(df_tendencia_idosos)
+
+        # --- CÓDIGO DE PLOTAGEM (MATPLOTLIB) ---
+        plt.figure(figsize=(12, 7))
+        
+        # 2. Pivota o DataFrame (Cardiologia vs. Oncologia)
+        df_pivot_idosos = df_tendencia_idosos.pivot(
+            index='Mes_Ano', 
+            columns='Area_Critica', 
+            values='Total_Procedimentos'
+        )
+        
+        # 3. Plota o gráfico de linhas
+        df_pivot_idosos.plot(kind='line', marker='o', ax=plt.gca())
+        
+        # 4. Adiciona títulos e legendas
+        plt.title('Tendência de Procedimentos Críticos (Idosos 60+)')
+        plt.xlabel('Mês')
+        plt.ylabel('Total de Procedimentos')
+        plt.legend(title='Área Crítica')
+        plt.grid(True)
+        plt.tight_layout()
+        
+        # 5. Salva o gráfico
+        plt.savefig('grafico_tendencia_idosos.png')
+        plt.close()
+        print(">>> Gráfico 'grafico_tendencia_idosos.png' salvo com sucesso.")
+        # --- FIM DA PLOTAGEM ---
+
+    except Exception as e:
+        print(f"Erro ao executar ou plotar a consulta: {e}")
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+
+print("\n--- Análise 3.7: Tendência de Demanda (Ijuí vs. Regional) ---")
+try:
+    df_tendencia_regional = pd.read_sql(queries.sql_tendencia_demanda_regional, engine)
+    print(df_tendencia_regional)
+except Exception as e:
+    print(f"Erro ao executar a consulta: {e}")
+
+
+print("\n--- Análise 3.7: Tendência de Procedimentos Críticos (Idosos 60+) ---")
+try:
+    df_tendencia_idosos = pd.read_sql(queries.sql_tendencia_idosos_criticos, engine)
+    print(df_tendencia_idosos)
 except Exception as e:
     print(f"Erro ao executar a consulta: {e}")

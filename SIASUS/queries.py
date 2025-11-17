@@ -240,3 +240,150 @@ GROUP BY
 ORDER BY
     T.mes;
 """
+
+# ---
+#  Etapa 3.6: Foco em Áreas Críticas (Oncologia)
+# ---
+sql_foco_oncologia = """
+SELECT
+    pa_cidpri AS "Codigo_CID",
+    COUNT(*) AS "Total_Procedimentos",
+    
+    -- Compara os valores aprovados vs. produzidos
+    SUM(pa_valapr) AS "Valor_Total_Aprovado",
+    SUM(pa_valpro) AS "Valor_Total_Produzido",
+    SUM(pa_valpro) - SUM(pa_valapr) AS "Diferenca_Financeira"
+FROM
+    pars
+WHERE
+    -- Filtra por todos os CIDs de Oncologia (C00-D48: Neoplasias)
+    pa_cidpri BETWEEN 'C00' AND 'D48'
+GROUP BY
+    pa_cidpri
+ORDER BY
+    Valor_Total_Aprovado DESC
+LIMIT 20; -- Top 20 diagnósticos oncológicos
+"""
+
+# ---
+#  Etapa 3.6: Foco em Áreas Críticas (Saúde Mental)
+# ---
+sql_foco_saude_mental = """
+SELECT
+    pa_cidpri AS "Codigo_CID",
+    COUNT(*) AS "Total_Procedimentos",
+    SUM(pa_valapr) AS "Valor_Total_Aprovado",
+    SUM(pa_valpro) AS "Valor_Total_Produzido",
+    SUM(pa_valpro) - SUM(pa_valapr) AS "Diferenca_Financeira"
+FROM
+    pars
+WHERE
+    -- Filtra por todos os CIDs de Saúde Mental (F00-F99)
+    pa_cidpri BETWEEN 'F00' AND 'F99'
+GROUP BY
+    pa_cidpri
+ORDER BY
+    Valor_Total_Aprovado DESC
+LIMIT 20; -- Top 20 diagnósticos de saúde mental
+"""
+
+# ---
+#  Etapa 3.6: Foco em Áreas Críticas (Atenção Básica - Diabetes)
+# ---
+sql_foco_diabetes = """
+SELECT
+    pa_proc_id AS "Codigo_Procedimento",
+    COUNT(*) AS "Total_Procedimentos",
+    SUM(pa_valapr) AS "Valor_Total_Aprovado"
+FROM
+    pars
+WHERE
+    -- Filtra por CIDs de Diabetes Mellitus (E10 a E14)
+    pa_cidpri BETWEEN 'E10' AND 'E14'
+GROUP BY
+    pa_proc_id
+ORDER BY
+    Total_Procedimentos DESC
+LIMIT 20; -- Top 20 procedimentos para pacientes com diabetes
+"""
+
+
+# --- queries.py ---
+
+# (Suas queries anteriores ficam aqui em cima)
+# ...
+
+# ---
+#  Etapa 3.7: Comparações Regionais (Ijuí vs. Santa Rosa vs. Cruz Alta)
+# ---
+sql_comp_regional = """
+SELECT
+    CASE
+        WHEN pa_munpcn = '431490' THEN 'Ijuí'
+        WHEN pa_munpcn = '431720' THEN 'Santa Rosa'
+        WHEN pa_munpcn = '430610' THEN 'Cruz Alta'
+    END AS "Municipio",
+    COUNT(*) AS "Total_Procedimentos",
+    SUM(pa_valapr) AS "Valor_Total_Aprovado"
+FROM
+    pars
+WHERE
+    -- Filtra apenas pelos 3 municípios de interesse
+    pa_munpcn IN ('431490', '431720', '430610')
+GROUP BY
+    Municipio
+ORDER BY
+    Valor_Total_Aprovado DESC;
+"""
+
+# ---
+#  Etapa 3.7: Tendência de Demanda (Ijuí vs. Média Regional)
+# ---
+sql_tendencia_demanda_regional = """
+SELECT
+    T.MAExt AS "Mes_Ano",
+    CASE
+        WHEN P.pa_munpcn = '431490' THEN 'Ijuí'
+        ELSE 'Outros Municípios (Regional)'
+    END AS "Grupo_Regional",
+    COUNT(*) AS "Total_Procedimentos"
+FROM
+    pars AS P
+JOIN
+    DIMTEMPO AS T ON P.pa_cmp = T.anomes
+WHERE
+    P.pa_munpcn != '999999' -- Exclui 'Não Informado' da média
+GROUP BY
+    T.MAExt, T.mes, Grupo_Regional
+ORDER BY
+    T.mes, Grupo_Regional;
+"""
+
+# ---
+#  Etapa 3.7: Tendências de Envelhecimento (Cardio vs. Onco)
+# ---
+sql_tendencia_idosos_criticos = """
+SELECT
+    T.MAExt AS "Mes_Ano",
+    CASE
+        WHEN P.pa_cidpri BETWEEN 'I00' AND 'I99' THEN 'Cardiologia'
+        WHEN P.pa_cidpri BETWEEN 'C00' AND 'D48' THEN 'Oncologia'
+    END AS "Area_Critica",
+    COUNT(*) AS "Total_Procedimentos"
+FROM
+    pars AS P
+JOIN
+    DIMTEMPO AS T ON P.pa_cmp = T.anomes
+WHERE
+    -- Filtra apenas por pacientes com 60 anos ou mais
+    P.pa_idade >= 60
+    -- Filtra apenas por CIDs Cardiológicos OU Oncológicos
+    AND (
+        (P.pa_cidpri BETWEEN 'I00' AND 'I99') OR
+        (P.pa_cidpri BETWEEN 'C00' AND 'D48')
+    )
+GROUP BY
+    T.MAExt, T.mes, Area_Critica
+ORDER BY
+    T.mes, Area_Critica;
+"""
