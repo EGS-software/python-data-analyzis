@@ -9,7 +9,7 @@ import queries
 
 try:
     # Substitua 'root' e 'SEU_PASSWORD' pelo seu usuário e senha
-    engine = create_engine("mysql+mysqlconnector://root:SEU_PASSWORD@localhost:3306/siasus")
+    engine = create_engine("mysql+mysqlconnector://root:Tiag123!@localhost:3306/siasus")
     print("Conexão com o banco 'siasus' realizada com sucesso!")
 except Exception as e:
     print(f"Erro ao conectar ao MySQL: {e}")

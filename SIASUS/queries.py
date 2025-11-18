@@ -99,23 +99,21 @@ sql_top_diagnosticos = """
 SELECT
     P.pa_cidpri AS "Codigo_CID",
     
-    -- Busca o nome da doença na tabela s_cid
-    -- ATENÇÃO: Verifique se o nome da coluna é 'cid_nome'
-    S.cid_nome AS "Nome_Diagnostico", 
+    
+    S.cd_descr AS "Nome_Diagnostico", 
     
     COUNT(*) AS "Total_Procedimentos"
 FROM
     pars AS P
 LEFT JOIN
-    -- Junta com a tabela S_CID para obter os nomes
-    s_cid AS S ON P.pa_cidpri = S.cid_cod
+    
+    s_cid AS S ON P.pa_cidpri = S.cd_cod
 GROUP BY
-    P.pa_cidpri, S.cid_nome
+    P.pa_cidpri, S.cd_descr
 ORDER BY
     Total_Procedimentos DESC
-LIMIT 20; -- Limita aos 20 principais
+LIMIT 20;
 """
-
 # ---
 # Etapa 3.3: Procedimentos para Doenças Crônicas (Ex: Hipertensão)
 # ---
@@ -139,24 +137,29 @@ LIMIT 20; -- 20 procedimentos mais comuns para hipertensão
 # ---
 #  Etapa 3.4: Fluxos Regionais (Top 30 Municípios de Origem)
 # ---
-sql_fluxo_top_municipios = """
+sql_fluxo_estab_dependentes = """
 SELECT
-    P.pa_munpcn AS "Codigo_Municipio",
-    -- Busca o nome do município na tabela 'tb_municip'
-    M.no_munic AS "Nome_Municipio", 
+    P.pa_coduni AS "Codigo_Estabelecimento",
+    P.pa_munpcn AS "Codigo_Municipio_Paciente",
+    
+    
+    M.ds_nome AS "Nome_Municipio_Paciente",
+    
     COUNT(*) AS "Total_Procedimentos"
 FROM
     pars AS P
 LEFT JOIN
-    -- Junta com a tabela de municípios para obter os nomes
-    tb_municip AS M ON P.pa_munpcn = M.co_municdv
+    
+    tb_municip AS M ON P.pa_munpcn = M.co_municip
+WHERE
+    -- Filtra APENAS pacientes que NÃO são de Ijuí e NÃO são 'Não Informado'
+    P.pa_munpcn != '431490' AND P.pa_munpcn != '999999'
 GROUP BY
-    P.pa_munpcn, M.no_munic
+    P.pa_coduni, P.pa_munpcn, M.ds_nome
 ORDER BY
     Total_Procedimentos DESC
-LIMIT 30; -- Ranking dos 30 principais municípios
+LIMIT 50;
 """
-
 # ---
 #  Etapa 3.4: Fluxos Regionais (Ijuí vs. Outros)
 # ---
