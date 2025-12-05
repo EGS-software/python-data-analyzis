@@ -1,0 +1,21 @@
+﻿Sexo;Faixa_Etaria_Resumo;Total_Procedimentos;Percentual
+M;Idoso (60+);50867;22.78
+F;Idoso (60+);47076;21.08
+F;Adulto (18-59);44535;19.94
+M;Adulto (18-59);39088;17.5
+M;Criança (5-13);9472;4.24
+M;00-04 Anos;5851;2.62
+I;Idoso (60+);5112;2.29
+F;Criança (5-13);4337;1.94
+I;Adulto (18-59);4299;1.93
+M;Adolescente (14-17);2965;1.33
+F;00-04 Anos;2743;1.23
+F;Adolescente (14-17);2432;1.09
+0;Idoso (60+);1756;0.79
+0;Adulto (18-59);1487;0.67
+I;Criança (5-13);507;0.23
+I;Adolescente (14-17);264;0.12
+0;Criança (5-13);190;0.09
+I;00-04 Anos;174;0.08
+0;Adolescente (14-17);89;0.04
+0;00-04 Anos;71;0.03
