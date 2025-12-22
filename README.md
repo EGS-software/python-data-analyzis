@@ -1,0 +1,1 @@
+Esse repo é usado para estudos de analize de dados com python 
