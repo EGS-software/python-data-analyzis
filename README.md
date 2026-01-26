@@ -2,7 +2,7 @@
 
 **Instituição:** Unijuí (Universidade Regional do Noroeste do Estado do Rio Grande do Sul)  
 **Curso:** [Insira seu Curso, ex: Ciência da Computação]  
-**Semestre:** [Ex: 2024/1]  
+**Semestre:** 2025/8
 **Professor(a):** [Nome do Professor]  
 **Status:** ✅ Concluído!
 
