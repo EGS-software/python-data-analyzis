@@ -4,6 +4,6 @@
 **Curso:** [Insira seu Curso, ex: Ciência da Computação]  
 **Semestre:** [Ex: 2024/1]  
 **Professor(a):** [Nome do Professor]  
-**Status:** 🟡 Em andamento
+**Status:** ✅ Concluído!
 
 ---
